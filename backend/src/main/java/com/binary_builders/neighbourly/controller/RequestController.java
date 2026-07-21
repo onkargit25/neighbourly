@@ -9,30 +9,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/items")
-public class ItemController {
+@RequestMapping("/requests")
+public class RequestController {
     
-    //for posting items online
+    //to create a new request
     @PostMapping
-    public void addItem() {
+    public void addRequest() {
 
     }
 
-    //for getting list of items near you 
-    @GetMapping
-    public void getItems() {
-
-    }
-
-    //for getting details of a certain item
+    //for getting info about a request
     @GetMapping("/{id}")
-    public void getItem() {
+    public void getRequest() {
 
     }
 
-    //for deleting an item you put online
+   
+    //for deleting a request
     @DeleteMapping("/{id}")
-    public void deleteItem() {
+    public void deleteRequest() {
 
     }
     

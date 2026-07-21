@@ -3,36 +3,34 @@ package com.binary_builders.neighbourly.controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/items")
-public class ItemController {
+@RequestMapping("/users")
+public class UserController {
     
-    //for posting items online
-    @PostMapping
-    public void addItem() {
+    
 
-    }
-
-    //for getting list of items near you 
-    @GetMapping
-    public void getItems() {
-
-    }
-
-    //for getting details of a certain item
+    //for getting a user's info
     @GetMapping("/{id}")
-    public void getItem() {
+    public void getUser() {
 
     }
 
-    //for deleting an item you put online
+    //for updating a user's info
+    @PutMapping("/{id}")
+    public void updateUser() {
+
+    }
+
+   
+    //for deleting a user profile
     @DeleteMapping("/{id}")
-    public void deleteItem() {
+    public void deleteUser() {
 
     }
     
