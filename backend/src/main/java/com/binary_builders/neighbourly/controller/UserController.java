@@ -1,5 +1,7 @@
 package com.binary_builders.neighbourly.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.binary_builders.neighbourly.model.User;
 import com.binary_builders.neighbourly.service.UserService;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController
 @RequestMapping("/users")
@@ -20,6 +20,11 @@ public class UserController {
     
     private final UserService userService;
     
+
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
 
     //for getting a user's info
     @GetMapping("/{id}")
