@@ -22,6 +22,11 @@ public class RequestService {
 
     public Request createRequest(Request request) {
         request.setCreatedAt(LocalDateTime.now());
+
+        User requester = userRepository.findById(request.getRequester().getId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        request.setRequester(requester);
         return requestRepository.save(request);
     }
 
@@ -82,6 +87,10 @@ public class RequestService {
                 double distance = earthRadius * c;
 
                 if (distance <= radius) {
+
+                    if(userId == (requester.getId())) {
+                        continue; 
+                    }
                     NearbyRequests.add(req);
                 }
             }

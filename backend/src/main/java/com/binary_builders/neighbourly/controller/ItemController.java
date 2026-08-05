@@ -1,5 +1,7 @@
 package com.binary_builders.neighbourly.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,8 +33,8 @@ public class ItemController {
 
     //for getting list of items near you 
     @GetMapping("/{id}/nearby")
-    public void getNearbyItems(@PathVariable Long id) {
-        itemService.getNearbyItems(id, (double)1);
+    public List<Item> getNearbyItems(@PathVariable Long id) {
+        return itemService.getNearbyItems(id, (double)1);
     }
 
     //for getting details of a certain item

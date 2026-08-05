@@ -1,8 +1,12 @@
 package com.binary_builders.neighbourly.service;
 
+import org.springframework.stereotype.Service;
+
+
 import com.binary_builders.neighbourly.model.User;
 import com.binary_builders.neighbourly.repository.UserRepository;
 
+@Service
 public class AuthService {
 
     public final UserRepository userRepository;

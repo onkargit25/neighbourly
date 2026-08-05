@@ -21,6 +21,10 @@ public class ItemService {
     }
 
     public Item createItem(Item item) {
+        User owner = userRepository.findById(item.getOwner().getId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        item.setOwner(owner);
         return itemRepository.save(item);
     }
 
@@ -81,7 +85,14 @@ public class ItemService {
                 double earthRadius = 6371; // Radius of the Earth in kilometers
                 double distance = earthRadius * c;
 
+                System.out.println("Distance to item " + item.getName() + ": " + distance + " km");
+
                 if (distance <= radius) {
+
+                    if(UserId == (owner.getId())) {
+                        continue; 
+                    }
+
                     NearbyItems.add(item);
                 }
             }
