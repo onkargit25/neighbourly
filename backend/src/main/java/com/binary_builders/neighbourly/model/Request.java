@@ -30,4 +30,56 @@ public class Request {
     @ManyToOne
     @JoinColumn (name = "requester_id")
     private User requester;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setServed(boolean isServed) {
+        this.isServed = isServed;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setType(RequestType type) {
+        this.type = type;
+    }
+
+    public void setRequester(User requester) {
+        this.requester = requester;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isServed() {
+        return isServed;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public RequestType getType() {
+        return type;
+    }
+
+    public User getRequester() {
+        return requester;
+    }
 }
